@@ -93,6 +93,32 @@
     font-size: .95rem;
   }
 
+  /* ---------- Photo ---------- */
+
+  .id-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .photo {
+    flex-shrink: 0;
+    width: 108px;
+    height: 108px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--rule);
+  }
+
+  .id-row h1 { margin-bottom: .35rem; }
+  .id-row .tagline { margin-bottom: 0; }
+  .id-row .affil { margin: .5rem 0 0; }
+
+  @media (max-width: 30rem) {
+    .id-row { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  }
+
   /* ---------- Contact row ---------- */
 
   .contact {
@@ -282,12 +308,18 @@
 <div class="wrap">
 
   <header>
-    <h1>Suzana Kozakijević</h1>
-    <p class="tagline">Cell biologist specialising in microscopy and image analysis</p>
-    <p class="affil">
-      Doctoral researcher, Sugimoto group &middot;
-      Max Delbrück Center for Molecular Medicine (MDC), Berlin-Buch
-    </p>
+    <div class="id-row">
+      <img class="photo" src="photo.jpg" width="108" height="108"
+           alt="Suzana Kozakijević">
+      <div>
+        <h1>Suzana Kozakijević</h1>
+        <p class="tagline">Cell biologist specialising in microscopy and image analysis</p>
+        <p class="affil">
+          Doctoral researcher, Sugimoto group &middot;
+          Max Delbrück Center for Molecular Medicine (MDC), Berlin-Buch
+        </p>
+      </div>
+    </div>
 
     <ul class="contact">
       <li><a href="mailto:suzana.kozakijevic@gmail.com">suzana.kozakijevic@gmail.com</a></li>
@@ -363,13 +395,13 @@
 
       <article class="entry">
         <div class="entry-head">
-          <h3>Master&rsquo;s thesis research</h3>
+          <h3>Master's thesis research</h3>
           <span class="dates">2021 &ndash; 2022</span>
         </div>
         <p class="where">Faculty of Biology, University of Belgrade</p>
         <ul>
-          <li>Thesis: &ldquo;The effects of selenite on filamentous fungi lipid droplet metabolism
-              monitored <em>in vivo</em> using advanced nonlinear microscopy techniques&rdquo;</li>
+          <li>Thesis: <em>The effects of selenite on filamentous fungi lipid droplet metabolism
+              monitored in vivo using advanced nonlinear microscopy techniques</em></li>
         </ul>
       </article>
 
@@ -472,15 +504,15 @@
           <h3>19th International PhD Student Cancer Conference (IPSCC)</h3>
           <span class="dates">Jun 2026</span>
         </div>
-        <p class="where">Poster: &ldquo;Unraveling the hypoxia-dependent vulnerabilities in neuroblastoma&rdquo;</p>
+        <p class="where">Poster: <em>Unraveling the hypoxia-dependent vulnerabilities in neuroblastoma</em></p>
       </article>
 
       <article class="entry">
         <div class="entry-head">
-          <h3>MDC-FMP PhD Retreat 2026, &ldquo;Time Travel: Science Across Time&rdquo;</h3>
+          <h3>MDC-FMP PhD Retreat 2026, <em>Time Travel: Science Across Time</em></h3>
           <span class="dates">Sep 2026</span>
         </div>
-        <p class="where">Poster: &ldquo;Unraveling the hypoxia-dependent vulnerabilities in neuroblastoma&rdquo;</p>
+        <p class="where">Poster: <em>Unraveling the hypoxia-dependent vulnerabilities in neuroblastoma</em></p>
       </article>
 
       <article class="entry">
@@ -489,8 +521,8 @@
           <span class="dates">Aug 2023</span>
         </div>
         <p class="where">
-          &ldquo;Atherosclerosis: Molecular Mechanisms, Genomic Modifiers and Therapeutic
-          Strategies&rdquo;, external participant
+          <em>Atherosclerosis: Molecular Mechanisms, Genomic Modifiers and Therapeutic
+          Strategies</em>, external participant
         </p>
       </article>
     </section>
@@ -527,8 +559,8 @@
     <div class="two-up">
       <section id="languages" aria-labelledby="h-languages">
         <h2 id="h-languages">Languages</h2>
-        <p class="lead">Serbian &mdash; native<br>
-           English &mdash; professional working proficiency</p>
+        <p class="lead">Serbian, native<br>
+           English, professional working proficiency</p>
       </section>
 
       <section id="contact" aria-labelledby="h-contact">
