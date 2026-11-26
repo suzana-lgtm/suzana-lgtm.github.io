@@ -4,11 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Suzana Kozakijević</title>
-<meta name="description" content="Suzana Kozakijević — cell biologist specialising in microscopy and image analysis. Doctoral researcher at the Max Delbrück Center for Molecular Medicine, Berlin.">
+<meta name="description" content="Suzana Kozakijević, cell biologist specialising in microscopy and image analysis. Doctoral researcher at the Max Delbrück Center for Molecular Medicine, Berlin.">
 <meta name="author" content="Suzana Kozakijević">
+<meta name="color-scheme" content="dark">
 
-<!-- Open Graph: controls how the page looks when shared on LinkedIn, Bluesky, Slack etc.
-     Update og:url once you know the final address. -->
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Suzana Kozakijević">
 <meta property="og:description" content="Cell biologist specialising in microscopy and image analysis. Doctoral researcher at the MDC, Berlin.">
@@ -17,27 +16,23 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔬</text></svg>">
 
 <style>
+  /* Dracula palette: https://draculatheme.com */
   :root {
-    --ink:        #1b2a30;
-    --ink-soft:   #51656d;
-    --ink-faint:  #8296a0;
-    --accent:     #2e6171;
-    --rule:       #dfe6e9;
-    --bg:         #fdfdfc;
-    --bg-sunk:    #f4f6f6;
-    --measure:    46rem;
-  }
+    --bg:        #282a36;  /* background    */
+    --bg-sunk:   #21222c;  /* darker inset  */
+    --line:      #44475a;  /* current line  */
+    --fg:        #f8f8f2;  /* foreground    */
+    --comment:   #6272a4;  /* comment       */
+    --cyan:      #8be9fd;
+    --green:     #50fa7b;
+    --orange:    #ffb86c;
+    --pink:      #ff79c6;
+    --purple:    #bd93f9;
+    --red:       #ff5555;
+    --yellow:    #f1fa8c;
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink:       #e4ebee;
-      --ink-soft:  #a9bcc4;
-      --ink-faint: #768c96;
-      --accent:    #7fc0d4;
-      --rule:      #26353c;
-      --bg:        #141d21;
-      --bg-sunk:   #1a252a;
-    }
+    --ink-soft:  #c3c5d1;
+    --measure:   46rem;
   }
 
   *, *::before, *::after { box-sizing: border-box; }
@@ -48,47 +43,46 @@
     margin: 0;
     padding: 0 1.5rem 5rem;
     background: var(--bg);
-    color: var(--ink);
-    font: 400 1rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    color: var(--fg);
+    font: 400 1rem/1.68 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           "Helvetica Neue", Arial, sans-serif;
-    font-feature-settings: "kern" 1;
     -webkit-font-smoothing: antialiased;
   }
 
   .wrap { max-width: var(--measure); margin: 0 auto; }
 
   a {
-    color: var(--accent);
+    color: var(--cyan);
     text-decoration-thickness: 1px;
     text-underline-offset: 2px;
   }
-  a:hover { text-decoration-thickness: 2px; }
+  a:hover { color: var(--pink); text-decoration-thickness: 2px; }
 
   /* ---------- Header ---------- */
 
   header {
     padding: 4.5rem 0 2rem;
-    border-bottom: 2px solid var(--accent);
+    border-bottom: 1px solid var(--line);
   }
 
   h1 {
-    margin: 0 0 .35rem;
-    font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
-    font-size: clamp(2.1rem, 6vw, 2.9rem);
-    font-weight: 600;
+    margin: 0 0 .4rem;
+    font-size: clamp(2rem, 5.5vw, 2.7rem);
+    font-weight: 700;
     letter-spacing: -.015em;
     line-height: 1.15;
+    color: var(--fg);
   }
 
   .tagline {
-    margin: 0 0 1.25rem;
-    color: var(--accent);
+    margin: 0;
+    color: var(--purple);
     font-size: 1.08rem;
     font-weight: 500;
   }
 
   .affil {
-    margin: 0 0 1.5rem;
+    margin: .5rem 0 0;
     color: var(--ink-soft);
     font-size: .95rem;
   }
@@ -98,8 +92,8 @@
   .id-row {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
+    gap: 1.75rem;
+    margin-bottom: 1.75rem;
   }
 
   .photo {
@@ -108,15 +102,11 @@
     height: 140px;
     border-radius: 50%;
     object-fit: cover;
-    border: 1px solid var(--rule);
+    border: 2px solid var(--line);
   }
 
-  .id-row h1 { margin-bottom: .35rem; }
-  .id-row .tagline { margin-bottom: 0; }
-  .id-row .affil { margin: .5rem 0 0; }
-
   @media (max-width: 30rem) {
-    .id-row { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .id-row { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
   }
 
   /* ---------- Contact row ---------- */
@@ -133,33 +123,37 @@
 
   .contact a {
     display: inline-block;
-    padding: .3rem .7rem;
-    border: 1px solid var(--rule);
+    padding: .3rem .8rem;
+    border: 1px solid var(--line);
     border-radius: 999px;
     text-decoration: none;
     color: var(--ink-soft);
+    background: var(--bg-sunk);
     transition: border-color .15s, color .15s;
   }
-  .contact a:hover { border-color: var(--accent); color: var(--accent); }
+  .contact a:hover { border-color: var(--purple); color: var(--purple); }
 
   /* ---------- Sections ---------- */
 
-  section { padding-top: 2.75rem; }
+  section { padding-top: 3rem; }
 
   h2 {
     margin: 0 0 1.5rem;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+                 "Liberation Mono", monospace;
     font-size: .78rem;
-    font-weight: 700;
-    letter-spacing: .13em;
+    font-weight: 600;
+    letter-spacing: .14em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--pink);
   }
 
   h3 {
     margin: 0;
-    font-size: 1rem;
+    font-size: 1.02rem;
     font-weight: 600;
     line-height: 1.4;
+    color: var(--green);
   }
 
   p { margin: 0 0 1rem; }
@@ -182,34 +176,35 @@
 
   .dates {
     flex-shrink: 0;
-    color: var(--ink-faint);
-    font-size: .85rem;
-    font-variant-numeric: tabular-nums;
+    color: var(--comment);
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+                 "Liberation Mono", monospace;
+    font-size: .82rem;
     white-space: nowrap;
   }
 
   .where {
     margin: .15rem 0 0;
     color: var(--ink-soft);
-    font-size: .93rem;
+    font-size: .94rem;
   }
 
   .project {
     margin: .4rem 0 .1rem;
-    font-size: .93rem;
+    font-size: .94rem;
     font-style: italic;
-    color: var(--ink);
+    color: var(--yellow);
   }
 
   .entry ul {
     margin: .7rem 0 0;
     padding-left: 1.1rem;
     color: var(--ink-soft);
-    font-size: .94rem;
+    font-size: .95rem;
   }
   .entry li { margin-bottom: .35rem; }
   .entry li:last-child { margin-bottom: 0; }
-  .entry li::marker { color: var(--ink-faint); }
+  .entry li::marker { color: var(--purple); }
 
   /* ---------- Skills ---------- */
 
@@ -218,9 +213,9 @@
     grid-template-columns: 11rem 1fr;
     gap: .9rem 1.5rem;
     margin: 0;
-    font-size: .94rem;
+    font-size: .95rem;
   }
-  .skills dt { font-weight: 600; }
+  .skills dt { font-weight: 600; color: var(--orange); }
   .skills dd { margin: 0; color: var(--ink-soft); }
 
   @media (max-width: 34rem) {
@@ -232,10 +227,12 @@
 
   .pub-kind {
     margin: 0 0 .9rem;
-    font-size: .82rem;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+                 "Liberation Mono", monospace;
+    font-size: .76rem;
     font-weight: 600;
-    letter-spacing: .04em;
-    color: var(--ink-faint);
+    letter-spacing: .1em;
+    color: var(--comment);
     text-transform: uppercase;
   }
   .pub-group + .pub-group { margin-top: 2rem; }
@@ -243,13 +240,13 @@
   .pub {
     margin: 0 0 1.25rem;
     padding-left: 1.1rem;
-    border-left: 2px solid var(--rule);
-    font-size: .94rem;
+    border-left: 2px solid var(--purple);
+    font-size: .95rem;
     color: var(--ink-soft);
-    line-height: 1.6;
+    line-height: 1.65;
   }
   .pub:last-child { margin-bottom: 0; }
-  .pub .me { font-weight: 600; color: var(--ink); }
+  .pub .me { font-weight: 600; color: var(--fg); }
   .pub .venue { font-style: italic; }
   .pub a { word-break: break-word; }
 
@@ -267,38 +264,40 @@
   footer {
     margin-top: 4rem;
     padding-top: 1.25rem;
-    border-top: 1px solid var(--rule);
-    color: var(--ink-faint);
+    border-top: 1px solid var(--line);
+    color: var(--comment);
     font-size: .85rem;
   }
 
   /* ---------- Print ---------- */
 
   @media print {
-    :root { --bg: #fff; --ink: #000; --ink-soft: #333; }
+    :root {
+      --bg: #fff; --bg-sunk: #fff; --fg: #000;
+      --ink-soft: #333; --comment: #555; --line: #ccc;
+      --pink: #000; --purple: #000; --green: #000;
+      --orange: #000; --yellow: #333; --cyan: #000;
+    }
     body { padding: 0; font-size: 10.5pt; }
     header { padding-top: 0; }
     section { padding-top: 1.5rem; break-inside: avoid; }
     .entry, .pub { break-inside: avoid; }
-    .contact a { border: none; padding: 0 .5rem 0 0; }
+    .contact a { border: none; background: none; padding: 0 .5rem 0 0; }
   }
 
   /* ---------- Accessibility ---------- */
 
-  .skip {
-    position: absolute;
-    left: -9999px;
-  }
+  .skip { position: absolute; left: -9999px; }
   .skip:focus {
     left: 1rem; top: 1rem;
     padding: .5rem 1rem;
     background: var(--bg);
-    border: 2px solid var(--accent);
+    border: 2px solid var(--purple);
     border-radius: 4px;
     z-index: 10;
   }
 
-  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  :focus-visible { outline: 2px solid var(--purple); outline-offset: 3px; }
 </style>
 </head>
 
@@ -323,11 +322,11 @@
 
     <ul class="contact">
       <li><a href="mailto:suzana.kozakijevic@gmail.com">suzana.kozakijevic@gmail.com</a></li>
-      <!-- VERIFY this URL against your browser address bar — the slug on the CV
+      <!-- VERIFY this URL against your browser address bar. The slug on the CV
            contains a non-ASCII character, which is unusual for LinkedIn. -->
       <li><a href="https://www.linkedin.com/in/suzana-kozakijevi%C4%87-6063141b5"
              rel="me noopener">LinkedIn</a></li>
-      <!-- Optional extras — delete the ones you don't have:
+      <!-- Optional extras. Delete the ones you do not have:
       <li><a href="https://orcid.org/0000-0000-0000-0000" rel="me noopener">ORCID</a></li>
       <li><a href="https://scholar.google.com/citations?user=XXXXXXX" rel="me noopener">Google&nbsp;Scholar</a></li>
       <li><a href="https://github.com/suzana-lgtm" rel="me noopener">GitHub</a></li>
@@ -417,44 +416,6 @@
           <li>Courses: Bioanalytical Instrumentation, Dec 2022; Biophotonics, Jun 2023</li>
         </ul>
       </article>
-    </section>
-
-    <section id="publications" aria-labelledby="h-publications">
-      <h2 id="h-publications">Publications</h2>
-
-      <div class="pub-group">
-        <p class="pub-kind">Journal article</p>
-        <p class="pub">
-          Egebjerg, J. M., Szomek, M., Thaysen, K., Juhl, A. D.,
-          <span class="me">Kozakijevic, S.</span>, Werner, S., Pratsch, C., Schneider, G.,
-          Kapishnikov, S., Ekman, A., Röttger, R., &amp; Wüstner, D. (2023).
-          Automated quantification of vacuole fusion and lipophagy in
-          <em>Saccharomyces cerevisiae</em> from fluorescence and cryo-soft X-ray microscopy
-          data using deep learning. <span class="venue">Autophagy</span>.
-          <a href="https://doi.org/10.1080/15548627.2023.2270378" rel="noopener">https://doi.org/10.1080/15548627.2023.2270378</a>
-        </p>
-      </div>
-
-      <div class="pub-group">
-        <p class="pub-kind">Conference abstracts</p>
-
-        <p class="pub">
-          Juhl, A. D., <span class="me">Kozakijevic, S.</span>, Willms, T., Egebjerg, J. M.,
-          Szomek, M., Thaysen, K., Pratsch, C., Werner, S., Schneider, G., Müller, P.,
-          &amp; Wüstner, D. (2023). Direct observation of uptake and dissolution of cholesterol
-          crystals by macrophages using combined fluorescence and X-ray microscopy.
-          <span class="venue">Microscopy and Microanalysis, 29</span>(Suppl 1), 1158&ndash;1159.
-          <a href="https://doi.org/10.1093/micmic/ozad067.592" rel="noopener">https://doi.org/10.1093/micmic/ozad067.592</a>
-        </p>
-
-        <p class="pub">
-          Pajić, T., <span class="me">Kozakijević, S.</span>, Krmpot, A. J., Živić, M.,
-          Todorović, N., &amp; Rabasović, M. D. (2023). <em>In vivo</em> multiphoton imaging of
-          a filamentous fungus <em>Phycomyces blakesleeanus</em>: the effect of small ambient
-          temperature increase on mitochondrial morphology and lipid droplets density.
-          <span class="venue">PHOTONICA 2023</span>, Belgrade, Serbia.
-        </p>
-      </div>
     </section>
 
     <section id="education" aria-labelledby="h-education">
@@ -554,6 +515,44 @@
         <dt>Bioinformatics &amp; tools</dt>
         <dd>NCBI, Ensembl, GenBank, BLAST, Swiss-Prot, Primer3, OligoCalc, EndNote, MS Office</dd>
       </dl>
+    </section>
+
+    <section id="publications" aria-labelledby="h-publications">
+      <h2 id="h-publications">Publications</h2>
+
+      <div class="pub-group">
+        <p class="pub-kind">Journal article</p>
+        <p class="pub">
+          Egebjerg, J. M., Szomek, M., Thaysen, K., Juhl, A. D.,
+          <span class="me">Kozakijevic, S.</span>, Werner, S., Pratsch, C., Schneider, G.,
+          Kapishnikov, S., Ekman, A., Röttger, R., &amp; Wüstner, D. (2023).
+          Automated quantification of vacuole fusion and lipophagy in
+          <em>Saccharomyces cerevisiae</em> from fluorescence and cryo-soft X-ray microscopy
+          data using deep learning. <span class="venue">Autophagy</span>.
+          <a href="https://doi.org/10.1080/15548627.2023.2270378" rel="noopener">https://doi.org/10.1080/15548627.2023.2270378</a>
+        </p>
+      </div>
+
+      <div class="pub-group">
+        <p class="pub-kind">Conference abstracts</p>
+
+        <p class="pub">
+          Juhl, A. D., <span class="me">Kozakijevic, S.</span>, Willms, T., Egebjerg, J. M.,
+          Szomek, M., Thaysen, K., Pratsch, C., Werner, S., Schneider, G., Müller, P.,
+          &amp; Wüstner, D. (2023). Direct observation of uptake and dissolution of cholesterol
+          crystals by macrophages using combined fluorescence and X-ray microscopy.
+          <span class="venue">Microscopy and Microanalysis, 29</span>(Suppl 1), 1158&ndash;1159.
+          <a href="https://doi.org/10.1093/micmic/ozad067.592" rel="noopener">https://doi.org/10.1093/micmic/ozad067.592</a>
+        </p>
+
+        <p class="pub">
+          Pajić, T., <span class="me">Kozakijević, S.</span>, Krmpot, A. J., Živić, M.,
+          Todorović, N., &amp; Rabasović, M. D. (2023). <em>In vivo</em> multiphoton imaging of
+          a filamentous fungus <em>Phycomyces blakesleeanus</em>: the effect of small ambient
+          temperature increase on mitochondrial morphology and lipid droplets density.
+          <span class="venue">PHOTONICA 2023</span>, Belgrade, Serbia.
+        </p>
+      </div>
     </section>
 
     <div class="two-up">
