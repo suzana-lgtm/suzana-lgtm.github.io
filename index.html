@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suzana Kozakijević</title>
+<meta name="description" content="Suzana Kozakijević — cell biologist specialising in microscopy and image analysis. Doctoral researcher at the Max Delbrück Center for Molecular Medicine, Berlin.">
+<meta name="author" content="Suzana Kozakijević">
+
+<!-- Open Graph: controls how the page looks when shared on LinkedIn, Bluesky, Slack etc.
+     Update og:url once you know the final address. -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Suzana Kozakijević">
+<meta property="og:description" content="Cell biologist specialising in microscopy and image analysis. Doctoral researcher at the MDC, Berlin.">
+<meta property="og:url" content="https://suzana-lgtm.github.io/">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔬</text></svg>">
+
+<style>
+  :root {
+    --ink:        #1b2a30;
+    --ink-soft:   #51656d;
+    --ink-faint:  #8296a0;
+    --accent:     #2e6171;
+    --rule:       #dfe6e9;
+    --bg:         #fdfdfc;
+    --bg-sunk:    #f4f6f6;
+    --measure:    46rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink:       #e4ebee;
+      --ink-soft:  #a9bcc4;
+      --ink-faint: #768c96;
+      --accent:    #7fc0d4;
+      --rule:      #26353c;
+      --bg:        #141d21;
+      --bg-sunk:   #1a252a;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    padding: 0 1.5rem 5rem;
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 1rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+    font-feature-settings: "kern" 1;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: var(--measure); margin: 0 auto; }
+
+  a {
+    color: var(--accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+  a:hover { text-decoration-thickness: 2px; }
+
+  /* ---------- Header ---------- */
+
+  header {
+    padding: 4.5rem 0 2rem;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  h1 {
+    margin: 0 0 .35rem;
+    font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+    font-size: clamp(2.1rem, 6vw, 2.9rem);
+    font-weight: 600;
+    letter-spacing: -.015em;
+    line-height: 1.15;
+  }
+
+  .tagline {
+    margin: 0 0 1.25rem;
+    color: var(--accent);
+    font-size: 1.08rem;
+    font-weight: 500;
+  }
+
+  .affil {
+    margin: 0 0 1.5rem;
+    color: var(--ink-soft);
+    font-size: .95rem;
+  }
+
+  /* ---------- Contact row ---------- */
+
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem .75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: .9rem;
+  }
+
+  .contact a {
+    display: inline-block;
+    padding: .3rem .7rem;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    text-decoration: none;
+    color: var(--ink-soft);
+    transition: border-color .15s, color .15s;
+  }
+  .contact a:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ---------- Sections ---------- */
+
+  section { padding-top: 2.75rem; }
+
+  h2 {
+    margin: 0 0 1.5rem;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  p { margin: 0 0 1rem; }
+  p:last-child { margin-bottom: 0; }
+
+  .lead { color: var(--ink-soft); }
+
+  /* ---------- Entries ---------- */
+
+  .entry { margin-bottom: 2.25rem; }
+  .entry:last-child { margin-bottom: 0; }
+
+  .entry-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .25rem 1rem;
+  }
+
+  .dates {
+    flex-shrink: 0;
+    color: var(--ink-faint);
+    font-size: .85rem;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .where {
+    margin: .15rem 0 0;
+    color: var(--ink-soft);
+    font-size: .93rem;
+  }
+
+  .project {
+    margin: .4rem 0 .1rem;
+    font-size: .93rem;
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  .entry ul {
+    margin: .7rem 0 0;
+    padding-left: 1.1rem;
+    color: var(--ink-soft);
+    font-size: .94rem;
+  }
+  .entry li { margin-bottom: .35rem; }
+  .entry li:last-child { margin-bottom: 0; }
+  .entry li::marker { color: var(--ink-faint); }
+
+  /* ---------- Skills ---------- */
+
+  .skills {
+    display: grid;
+    grid-template-columns: 11rem 1fr;
+    gap: .9rem 1.5rem;
+    margin: 0;
+    font-size: .94rem;
+  }
+  .skills dt { font-weight: 600; }
+  .skills dd { margin: 0; color: var(--ink-soft); }
+
+  @media (max-width: 34rem) {
+    .skills { grid-template-columns: 1fr; gap: .25rem; }
+    .skills dd { margin-bottom: .9rem; }
+  }
+
+  /* ---------- Publications ---------- */
+
+  .pub-kind {
+    margin: 0 0 .9rem;
+    font-size: .82rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+  }
+  .pub-group + .pub-group { margin-top: 2rem; }
+
+  .pub {
+    margin: 0 0 1.25rem;
+    padding-left: 1.1rem;
+    border-left: 2px solid var(--rule);
+    font-size: .94rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .pub:last-child { margin-bottom: 0; }
+  .pub .me { font-weight: 600; color: var(--ink); }
+  .pub .venue { font-style: italic; }
+  .pub a { word-break: break-word; }
+
+  /* ---------- Two-up ---------- */
+
+  .two-up {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 2.75rem;
+  }
+  .two-up > section { padding-top: 0; }
+
+  /* ---------- Footer ---------- */
+
+  footer {
+    margin-top: 4rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    color: var(--ink-faint);
+    font-size: .85rem;
+  }
+
+  /* ---------- Print ---------- */
+
+  @media print {
+    :root { --bg: #fff; --ink: #000; --ink-soft: #333; }
+    body { padding: 0; font-size: 10.5pt; }
+    header { padding-top: 0; }
+    section { padding-top: 1.5rem; break-inside: avoid; }
+    .entry, .pub { break-inside: avoid; }
+    .contact a { border: none; padding: 0 .5rem 0 0; }
+  }
+
+  /* ---------- Accessibility ---------- */
+
+  .skip {
+    position: absolute;
+    left: -9999px;
+  }
+  .skip:focus {
+    left: 1rem; top: 1rem;
+    padding: .5rem 1rem;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+    border-radius: 4px;
+    z-index: 10;
+  }
+
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="wrap">
+
+  <header>
+    <h1>Suzana Kozakijević</h1>
+    <p class="tagline">Cell biologist specialising in microscopy and image analysis</p>
+    <p class="affil">
+      Doctoral researcher, Sugimoto group &middot;
+      Max Delbrück Center for Molecular Medicine (MDC), Berlin-Buch
+    </p>
+
+    <ul class="contact">
+      <li><a href="mailto:suzana.kozakijevic@gmail.com">suzana.kozakijevic@gmail.com</a></li>
+      <!-- VERIFY this URL against your browser address bar — the slug on the CV
+           contains a non-ASCII character, which is unusual for LinkedIn. -->
+      <li><a href="https://www.linkedin.com/in/suzana-kozakijevi%C4%87-6063141b5"
+             rel="me noopener">LinkedIn</a></li>
+      <!-- Optional extras — delete the ones you don't have:
+      <li><a href="https://orcid.org/0000-0000-0000-0000" rel="me noopener">ORCID</a></li>
+      <li><a href="https://scholar.google.com/citations?user=XXXXXXX" rel="me noopener">Google&nbsp;Scholar</a></li>
+      <li><a href="https://github.com/suzana-lgtm" rel="me noopener">GitHub</a></li>
+      <li><a href="CV.pdf">CV (PDF)</a></li>
+      -->
+    </ul>
+  </header>
+
+  <main id="main">
+
+    <section id="about" aria-labelledby="h-about">
+      <h2 id="h-about">About</h2>
+      <p class="lead">
+        PhD student at the MDC in Berlin, trained in biophysics. I have imaged cells on
+        widefield, confocal and two-photon microscopes and analysed the data with FIJI and
+        Cellpose. I have also prepared samples for cryo-soft X-ray microscopy and
+        reconstructed the synchrotron data, and analysed spatial transcriptomics data in R.
+        I work daily with mammalian cell lines, and I have taught students microscopy theory
+        and given them hands-on demonstrations of confocal and widefield microscopes.
+        I am looking for an application scientist position in life-science instrumentation.
+      </p>
+    </section>
+
+    <section id="research" aria-labelledby="h-research">
+      <h2 id="h-research">Research experience</h2>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>Doctoral researcher</h3>
+          <span class="dates">2024 &ndash; present</span>
+        </div>
+        <p class="where">Sugimoto group, Max Delbrück Center for Molecular Medicine (MDC), Berlin-Buch</p>
+        <p class="project">The role of JMJD6 in neuroblastoma survival</p>
+        <ul>
+          <li>Doxycycline-inducible shRNA knockdown of JMJD6 in the neuroblastoma cell lines
+              SK-N-AS and CHP-134; also cultured KELLY, SH-SY5Y and HeLa cells</li>
+          <li>Cloned wild-type and catalytically inactive JMJD6 and made rescue cell lines with them</li>
+          <li>Clonogenic survival assays, PI cell-cycle analysis by flow cytometry,
+              western blotting, hypoxia treatments</li>
+          <li>Immunofluorescence imaging of nucleolar proteins and DNA damage (&gamma;H2AX)
+              on a Leica THUNDER widefield system</li>
+          <li>Quantified images in FIJI, with nuclei segmented in Cellpose</li>
+          <li>Collaborative side project on mitochondrial genotypes in the ageing mouse heart:
+              analysed 10x Xenium spatial transcriptomics data in R and mapped cell types with FICTURE</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>Doctoral researcher</h3>
+          <span class="dates">2022 &ndash; 2024</span>
+        </div>
+        <p class="where">Wüstner group, University of Southern Denmark (SDU), Odense, Denmark</p>
+        <ul>
+          <li>Studied uptake and dissolution of cholesterol crystals by macrophages with
+              fluorescence and cryo-soft X-ray microscopy</li>
+          <li>Prepared samples for cryo-soft X-ray imaging at the synchrotron and
+              reconstructed the raw data</li>
+          <li>Tracked uptake and efflux of fluorescent sterol analogues in cells;
+              prepared acetylated LDL</li>
+          <li>Contributed to a deep-learning analysis of vacuole fusion and lipophagy in yeast,
+              published in <em>Autophagy</em> in 2023</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>Master&rsquo;s thesis research</h3>
+          <span class="dates">2021 &ndash; 2022</span>
+        </div>
+        <p class="where">Faculty of Biology, University of Belgrade</p>
+        <ul>
+          <li>Thesis: &ldquo;The effects of selenite on filamentous fungi lipid droplet metabolism
+              monitored <em>in vivo</em> using advanced nonlinear microscopy techniques&rdquo;</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>Student instructor</h3>
+          <span class="dates">2022 &ndash; 2023</span>
+        </div>
+        <p class="where">Bachelor courses</p>
+        <ul>
+          <li>Taught microscopy theory</li>
+          <li>Hands-on demonstrations of confocal and widefield microscopes</li>
+          <li>Courses: Bioanalytical Instrumentation, Dec 2022; Biophotonics, Jun 2023</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="publications" aria-labelledby="h-publications">
+      <h2 id="h-publications">Publications</h2>
+
+      <div class="pub-group">
+        <p class="pub-kind">Journal article</p>
+        <p class="pub">
+          Egebjerg, J. M., Szomek, M., Thaysen, K., Juhl, A. D.,
+          <span class="me">Kozakijevic, S.</span>, Werner, S., Pratsch, C., Schneider, G.,
+          Kapishnikov, S., Ekman, A., Röttger, R., &amp; Wüstner, D. (2023).
+          Automated quantification of vacuole fusion and lipophagy in
+          <em>Saccharomyces cerevisiae</em> from fluorescence and cryo-soft X-ray microscopy
+          data using deep learning. <span class="venue">Autophagy</span>.
+          <a href="https://doi.org/10.1080/15548627.2023.2270378" rel="noopener">https://doi.org/10.1080/15548627.2023.2270378</a>
+        </p>
+      </div>
+
+      <div class="pub-group">
+        <p class="pub-kind">Conference abstracts</p>
+
+        <p class="pub">
+          Juhl, A. D., <span class="me">Kozakijevic, S.</span>, Willms, T., Egebjerg, J. M.,
+          Szomek, M., Thaysen, K., Pratsch, C., Werner, S., Schneider, G., Müller, P.,
+          &amp; Wüstner, D. (2023). Direct observation of uptake and dissolution of cholesterol
+          crystals by macrophages using combined fluorescence and X-ray microscopy.
+          <span class="venue">Microscopy and Microanalysis, 29</span>(Suppl 1), 1158&ndash;1159.
+          <a href="https://doi.org/10.1093/micmic/ozad067.592" rel="noopener">https://doi.org/10.1093/micmic/ozad067.592</a>
+        </p>
+
+        <p class="pub">
+          Pajić, T., <span class="me">Kozakijević, S.</span>, Krmpot, A. J., Živić, M.,
+          Todorović, N., &amp; Rabasović, M. D. (2023). <em>In vivo</em> multiphoton imaging of
+          a filamentous fungus <em>Phycomyces blakesleeanus</em>: the effect of small ambient
+          temperature increase on mitochondrial morphology and lipid droplets density.
+          <span class="venue">PHOTONICA 2023</span>, Belgrade, Serbia.
+        </p>
+      </div>
+    </section>
+
+    <section id="education" aria-labelledby="h-education">
+      <h2 id="h-education">Education</h2>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>PhD, Molecular Mechanisms of Environment Sensing</h3>
+          <span class="dates">2024 &ndash; present</span>
+        </div>
+        <p class="where">Max Delbrück Center for Molecular Medicine (MDC), Berlin</p>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>MSc Biology, module Biophysics (60 ECTS)</h3>
+          <span class="dates">2021 &ndash; 2022</span>
+        </div>
+        <p class="where">Faculty of Biology, University of Belgrade</p>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>BSc Biology, module Molecular Biology and Physiology (247 ECTS)</h3>
+          <span class="dates">2016 &ndash; 2021</span>
+        </div>
+        <p class="where">Faculty of Biology, University of Belgrade</p>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>Medical School, Laboratory Technician</h3>
+          <span class="dates">2012 &ndash; 2016</span>
+        </div>
+        <p class="where">
+          Including placements in clinical microbiology, biochemistry, haematology
+          and pathohistology laboratories in Belgrade
+        </p>
+      </article>
+    </section>
+
+    <section id="conferences" aria-labelledby="h-conferences">
+      <h2 id="h-conferences">Conferences &amp; presentations</h2>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>19th International PhD Student Cancer Conference (IPSCC)</h3>
+          <span class="dates">Jun 2026</span>
+        </div>
+        <p class="where">Poster: &ldquo;Unraveling the hypoxia-dependent vulnerabilities in neuroblastoma&rdquo;</p>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>MDC-FMP PhD Retreat 2026, &ldquo;Time Travel: Science Across Time&rdquo;</h3>
+          <span class="dates">Sep 2026</span>
+        </div>
+        <p class="where">Poster: &ldquo;Unraveling the hypoxia-dependent vulnerabilities in neuroblastoma&rdquo;</p>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>Danish Cardiovascular Academy PhD course and retreat</h3>
+          <span class="dates">Aug 2023</span>
+        </div>
+        <p class="where">
+          &ldquo;Atherosclerosis: Molecular Mechanisms, Genomic Modifiers and Therapeutic
+          Strategies&rdquo;, external participant
+        </p>
+      </article>
+    </section>
+
+    <section id="skills" aria-labelledby="h-skills">
+      <h2 id="h-skills">Skills</h2>
+      <dl class="skills">
+        <dt>Microscopy</dt>
+        <dd>Widefield fluorescence on Leica THUNDER and Leica Mica, Nikon confocal,
+            confocal FRAP and FLIP, two-photon excitation fluorescence, third harmonic
+            generation (THG) imaging, sample preparation for cryo-soft X-ray microscopy</dd>
+
+        <dt>Data analysis</dt>
+        <dd>FIJI/ImageJ, Cellpose, FICTURE, cryo-soft X-ray data reconstruction</dd>
+
+        <dt>Programming</dt>
+        <dd>R for spatial transcriptomics analysis and data plots; basic Python for
+            image analysis scripts and plots</dd>
+
+        <dt>Cell biology</dt>
+        <dd>Mammalian cell culture including inducible shRNA lines, siRNA knockdown,
+            CRISPR/Cas gene editing, clonogenic assays, flow cytometry,
+            immunofluorescence, fluorescent sterol uptake and efflux assays</dd>
+
+        <dt>Molecular biology</dt>
+        <dd>Molecular cloning, PCR, qPCR, RT-PCR, western blot, ELISA, protein labelling,
+            electrophoresis</dd>
+
+        <dt>Bioinformatics &amp; tools</dt>
+        <dd>NCBI, Ensembl, GenBank, BLAST, Swiss-Prot, Primer3, OligoCalc, EndNote, MS Office</dd>
+      </dl>
+    </section>
+
+    <div class="two-up">
+      <section id="languages" aria-labelledby="h-languages">
+        <h2 id="h-languages">Languages</h2>
+        <p class="lead">Serbian &mdash; native<br>
+           English &mdash; professional working proficiency</p>
+      </section>
+
+      <section id="contact" aria-labelledby="h-contact">
+        <h2 id="h-contact">Contact</h2>
+        <p class="lead">
+          <a href="mailto:suzana.kozakijevic@gmail.com">suzana.kozakijevic@gmail.com</a><br>
+          Berlin, Germany
+        </p>
+      </section>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Last updated November 2026.</p>
+  </footer>
+
+</div>
+</body>
+</html>
